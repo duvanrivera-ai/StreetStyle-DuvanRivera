@@ -10,37 +10,45 @@ const productos = [
     nombre: 'Hoodie “Black Street”',
     categoria: 'Hoodies',
     precio: 120000,
-    img: 'hoodie-black-street.png'
+    img: 'https://i.pinimg.com/736x/87/fd/06/87fd060c00f3b77e08bcaefebed21ca8.jpg'
   },
   {
     id: 2,
     nombre: 'Hoodie “Retro Gray”',
     categoria: 'Hoodies',
     precio: 115000,
-    img: 'hoodie-retro-gray.png'
+    img: 'https://i.pinimg.com/1200x/ac/af/20/acaf202d83ae17d909255bdde79959c9.jpg'
   },
   {
     id: 3,
-    nombre: 'Gorra “Classic White”',
+    nombre: 'Gorra “NYC Flat”',
     categoria: 'Gorras',
-    precio: 70000,
-    img: 'gorra-classic-white.png'
+    precio: 75000,
+    img: 'https://i.pinimg.com/736x/32/a3/65/32a365ea2ea57c55fa39edae4905c521.jpg'
   },
   {
     id: 4,
-    nombre: 'Buso Oversize “Storm”',
-    categoria: 'Busos oversize',
-    precio: 95000,
-    img: 'buso-oversize-storm.png'
+    nombre: 'Gorra “Classic White”',
+    categoria: 'Gorras',
+    precio: 70000,
+    img: 'https://i.pinimg.com/1200x/ec/a9/1a/eca91a1568d9d443930eca7984f2c185.jpg'
   },
   {
     id: 5,
+    nombre: 'Buso Oversize “Storm”',
+    categoria: 'Busos oversize',
+    precio: 95000,
+    img: 'https://i.pinimg.com/736x/69/38/bf/6938bf86743551cab01f47c47a3b2ff4.jpg'
+  },
+  {
+    id: 6,
     nombre: 'Buso Oversize “Skyline”',
     categoria: 'Busos oversize',
     precio: 99000,
-    img: 'buso-oversize-skyline.png'
+    img: 'https://i.pinimg.com/736x/22/b6/85/22b68521cf82a1300db99b50452c871f.jpg'
   }
 ];
+
 
 let carrito = new Map();
 
