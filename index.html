@@ -1,142 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>StreetStyle — Tienda oficial</title>
-  <meta name="description" content="StreetStyle: hoodies, gorras y busos oversize. Carrito con persistencia y pago sandbox PayPal."/>
-
-  <style>
-    /* ====== BRANDING STREETSTYLE (ESTILO AZUL) ====== */
-    :root{
-      --bg:#020617;
-      --panel:#02081f;
-      --card:#050f23;
-      --text:#e5f0ff;
-      --muted:#7c8aab;
-      --accent:#38bdf8;
-      --accent-2:#0ea5e9;
-      --ok:#22c55e;
-      --warn:#ef4444;
-      --info:#3b82f6;
-      --border:#0f172a;
-    }
-
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      background:radial-gradient(circle at top, #0b1220 0, #020617 45%, #000 100%);
-      color:var(--text);
-      padding:24px;
-      min-height:100vh;
-    }
-
-    header{
-      background:linear-gradient(135deg, rgba(56,189,248,.25), transparent 45%) , var(--panel);
-      padding:20px 24px;
-      border-radius:20px;
-      margin-bottom:22px;
-      border:1px solid rgba(15,23,42,.9);
-      box-shadow:0 18px 45px rgba(15,23,42,.9);
-    }
-    .brand-row{display:flex;align-items:center;gap:18px}
-    .logo{
-      width:72px;height:72px;border-radius:999px;
-      border:2px solid rgba(148,222,255,.8);
-      box-shadow:0 0 24px rgba(56,189,248,.6);
-      object-fit:cover;background:#020617;
-    }
-    h1{font-size:2.4rem;color:var(--accent)}
-    .subbrand{color:var(--muted);margin-top:4px}
-    .tagline{margin-top:6px;color:#cbd5f5;font-size:.95rem}
-
-    .filtros{
-      margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;font-size:.9rem
-    }
-    .filtros label{color:var(--muted)}
-    select{
-      background:rgba(15,23,42,.9);
-      color:var(--text);
-      border:1px solid var(--border);
-      border-radius:999px;
-      padding:8px 14px;
-    }
-
-    main{
-      display:grid;
-      grid-template-columns:minmax(0,2fr) minmax(320px,1.2fr);
-      gap:24px;
-    }
-    @media(max-width:900px){ main{grid-template-columns:1fr} }
-
-    #productos{
-      background:linear-gradient(145deg, rgba(15,23,42,.8), rgba(3,7,18,.95));
-      border-radius:18px;
-      padding:18px;
-      border:1px solid var(--border);
-      display:grid;
-      grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
-      gap:16px;
-    }
-    #productos::before{
-      content:"Explora nuestros productos";
-      grid-column:1/-1;color:#e2f3ff;font-weight:600;margin-bottom:4px
-    }
-
-    .producto{
-      background:radial-gradient(circle at top, rgba(56,189,248,.12), transparent 55%),var(--card);
-      border:1px solid rgba(15,23,42,.9);
-      border-radius:16px;
-      padding:12px;display:flex;flex-direction:column;gap:6px;
-      transition:.16s;box-shadow:0 8px 22px rgba(15,23,42,.75);
-    }
-    .producto:hover{
-      transform:translateY(-3px);
-      border-color:rgba(56,189,248,.7);
-      box-shadow:0 14px 35px rgba(15,23,42,.95);
-    }
-    .producto img{width:100%;height:230px;object-fit:cover;border-radius:12px}
-    .price{color:var(--accent);font-weight:600}
-
-    .button{
-      margin-top:6px;
-      background:linear-gradient(135deg, var(--accent), var(--accent-2));
-      border:none;color:#020617;font-weight:600;
-      padding:9px;border-radius:999px;cursor:pointer;
-    }
-    .button:hover{box-shadow:0 0 18px rgba(56,189,248,.55)}
-
-    .carrito{
-      background:radial-gradient(circle at top left, rgba(56,189,248,.26), transparent 55%), var(--panel);
-      padding:18px;border-radius:18px;border:1px solid var(--border);
-      box-shadow:0 16px 35px rgba(15,23,42,.95);
-    }
-    #lista-carrito{max-height:260px;overflow:auto;margin-top:10px}
-    #lista-carrito li{
-      background:rgba(15,23,42,.9);
-      border:1px solid var(--border);
-      padding:8px;border-radius:12px;
-      display:flex;justify-content:space-between;gap:10px;margin-bottom:8px;
-    }
-    .qty{display:flex;align-items:center;gap:6px}
-    .qty button{background:transparent;color:white;border:1px solid var(--border);border-radius:6px;padding:4px}
-    .remove{background:var(--warn);color:white;border:none;border-radius:6px;padding:6px}
-
-    .totales{margin-top:12px;display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
-    .total{grid-column:1/-1;font-size:1.1rem;color:white}
-
-    .acciones{display:flex;gap:10px;margin-top:12px}
-    .vaciar{background:rgba(239,68,68,.12);color:#fecaca;border:1px solid rgba(239,68,68,.45);padding:9px 12px;border-radius:999px}
-    .finalizar{background:linear-gradient(135deg,var(--info),#1d4ed8);color:white;border-radius:999px;padding:9px 12px}
-
-    .pago{margin-top:16px;background:rgba(15,23,42,.95);padding:12px;border-radius:14px;border:1px dashed var(--border)}
-  </style>
+  <meta name="description" content="StreetStyle: hoodies, gorras y busos oversize. Carrito con persistencia y pago sandbox PayPal." />
+  <link rel="stylesheet" href="style.css" />
+  <!-- SDK PayPal (sandbox). Deja client-id=sb para pruebas -->
+  <script src="https://www.paypal.com/sdk/js?client-id=sb&components=buttons" defer></script>
+  <script src="app.js" defer></script>
 </head>
 <body>
-
   <header>
     <div class="brand-row">
-      <img src="img/logo-shiba-streetstyle.png" class="logo" alt="Mascota Shiba">
+      <img src="streetstyle-shiba-logo.png" alt="Mascota Shiba StreetStyle" class="logo" />
       <div>
         <h1>StreetStyle</h1>
         <p class="subbrand">by Juan Andrés</p>
@@ -144,9 +21,9 @@
       </div>
     </div>
 
-    <div class="filtros">
-      <label>Filtrar por categoría:</label>
-      <select id="categoria">
+    <div class="filtros" aria-label="Filtros">
+      <label for="categoria">Filtrar por categoría:</label>
+      <select id="categoria" name="categoria">
         <option value="todos">Todos</option>
         <option value="Hoodies">Hoodies</option>
         <option value="Gorras">Gorras</option>
@@ -156,160 +33,33 @@
   </header>
 
   <main id="main">
-    <section id="productos"></section>
+    <section id="productos" aria-live="polite" aria-busy="false"></section>
 
-    <section class="carrito">
+    <section class="carrito" aria-label="Carrito de compras">
       <h2>🛒 Carrito</h2>
-      <p><strong>Productos: <span id="cantidad-carrito">0</span></strong></p>
+      <p><strong>Productos en carrito: <span id="cantidad-carrito">0</span></strong></p>
       <ul id="lista-carrito"></ul>
 
       <div class="totales">
-        <p>Subtotal: <strong id="subtotal-text">$0</strong></p>
-        <p>Descuento: <strong id="descuento-text">$0</strong></p>
-        <p>Impuestos: <strong id="impuestos-text">$0</strong></p>
-        <p class="total">Total: <strong id="total-text">$0</strong></p>
+        <p>Subtotal: <strong id="subtotal-text">$0,00</strong></p>
+        <p>Descuento: <strong id="descuento-text">$0,00</strong></p>
+        <p>Impuestos: <strong id="impuestos-text">$0,00</strong></p>
+        <p class="total">Total: <strong id="total-text">$0,00</strong></p>
       </div>
 
       <div class="acciones">
-        <button id="btn-vaciar" class="vaciar">Vaciar</button>
-        <button id="btn-finalizar" class="finalizar">Finalizar</button>
+        <button id="btn-vaciar" class="vaciar" type="button">🧼 Vaciar</button>
+        <button id="btn-finalizar" class="finalizar" type="button">✅ Finalizar</button>
       </div>
 
       <div class="pago">
-        <h3>Método de pago</h3>
-        <div id="paypal-button-container" style="display:none"></div>
+        <h3>💳 Método de pago</h3>
+        <div id="paypal-button-container" style="display:none;"></div>
+        <p class="hint">Modo sandbox: luego reemplaza <code>client-id=sb</code> por tu Client ID de pruebas.</p>
       </div>
     </section>
+
+    <div id="hints-vacios" class="hint" style="display:none"></div>
   </main>
-
-  <script src="https://www.paypal.com/sdk/js?client-id=sb&components=buttons"></script>
-
-  <script>
-    const MONEDA='COP', LOCALE='es-CO', TAX_RATE=0.19, DESCUENTO=0;
-
-    const productos=[
-      {id:1, nombre:'Hoodie “Black Street”',categoria:'Hoodies',precio:120000,img:'img/hoodie-black-street.png'},
-      {id:2, nombre:'Hoodie “Retro Gray”',categoria:'Hoodies',precio:115000,img:'img/hoodie-retro-gray.png'},
-      {id:3, nombre:'Gorra “NYC Flat”',categoria:'Gorras',precio:75000,img:'img/gorra-nyc-flat.png'},
-      {id:4, nombre:'Gorra “Classic White”',categoria:'Gorras',precio:70000,img:'img/gorra-classic-white.png'},
-      {id:5, nombre:'Buso Oversize “Storm”',categoria:'Busos oversize',precio:95000,img:'img/buso-oversize-storm.png'},
-      {id:6, nombre:'Buso Oversize “Skyline”',categoria:'Busos oversize',precio:99000,img:'img/buso-oversize-skyline.png'}
-    ];
-
-    let carrito=new Map();
-    const el={
-      cont:document.getElementById('productos'),
-      lista:document.getElementById('lista-carrito'),
-      subtotal:document.getElementById('subtotal-text'),
-      descuento:document.getElementById('descuento-text'),
-      impuestos:document.getElementById('impuestos-text'),
-      total:document.getElementById('total-text'),
-      cantidad:document.getElementById('cantidad-carrito'),
-      select:document.getElementById('categoria'),
-      paypal:document.getElementById('paypal-button-container')
-    };
-    const money=new Intl.NumberFormat(LOCALE,{style:'currency',currency:MONEDA});
-
-    function renderProductos(list){
-      el.cont.innerHTML='';
-      list.forEach(p=>{
-        const card=document.createElement('article');
-        card.className='producto';
-        card.innerHTML=`
-          <img src="${p.img}">
-          <h3>${p.nombre}</h3>
-          <p class="price">${money.format(p.precio)}</p>
-          <button class="button" data-add="${p.id}">Agregar</button>
-        `;
-        el.cont.appendChild(card);
-      });
-    }
-
-    function filtrar(){
-      const c=el.select.value;
-      renderProductos(c==='todos'?productos:productos.filter(x=>x.categoria===c));
-    }
-
-    function persist(){localStorage.setItem('carrito',JSON.stringify([...carrito]));}
-    function load(){const d=JSON.parse(localStorage.getItem('carrito')||'[]'); carrito=new Map(d);}
-
-    function totales(){
-      let subtotal=0,cant=0;
-      carrito.forEach(x=>{subtotal+=x.precio*x.cantidad;cant+=x.cantidad});
-      const impuestos=subtotal*TAX_RATE;
-      return {subtotal,impuestos,total:subtotal+impuestos,cant};
-    }
-
-    function pintarCarrito(){
-      el.lista.innerHTML='';
-      carrito.forEach(i=>{
-        const li=document.createElement('li');
-        li.innerHTML=`
-          <span>${i.nombre} — ${money.format(i.precio)}</span>
-          <div class="qty">
-            <button data-dec="${i.id}">-</button>
-            <span>${i.cantidad}</span>
-            <button data-inc="${i.id}">+</button>
-            <button class="remove" data-del="${i.id}">X</button>
-          </div>`;
-        el.lista.appendChild(li);
-      });
-
-      const t=totales();
-      el.subtotal.textContent=money.format(t.subtotal);
-      el.impuestos.textContent=money.format(t.impuestos);
-      el.total.textContent=money.format(t.total);
-      el.cantidad.textContent=t.cant;
-
-      el.paypal.style.display=t.total>0?'block':'none';
-      renderPayPal(t.total);
-    }
-
-    function add(id){
-      const p=productos.find(x=>x.id===id);
-      if(!p)return;
-      const i=carrito.get(id);
-      if(i)i.cantidad++; else carrito.set(id,{...p,cantidad:1});
-      persist(); pintarCarrito();
-    }
-    function dec(id){
-      const i=carrito.get(id);
-      if(!i)return;
-      if(--i.cantidad<=0) carrito.delete(id);
-      persist(); pintarCarrito();
-    }
-    function del(id){carrito.delete(id);persist();pintarCarrito();}
-
-    function renderPayPal(total){
-      if(!window.paypal)return;
-      el.paypal.innerHTML='';
-      paypal.Buttons({
-        createOrder:(data,actions)=>actions.order.create({
-          purchase_units:[{amount:{value:total.toFixed(2),currency_code:MONEDA}}]
-        }),
-        onApprove:(data,actions)=>actions.order.capture().then(()=>{
-          alert("Pago realizado, gracias!");
-          carrito.clear();persist();pintarCarrito();
-        })
-      }).render('#paypal-button-container');
-    }
-
-    document.addEventListener('click',e=>{
-      if(e.target.dataset.add) add(+e.target.dataset.add);
-      if(e.target.dataset.inc) add(+e.target.dataset.inc);
-      if(e.target.dataset.dec) dec(+e.target.dataset.dec);
-      if(e.target.dataset.del) del(+e.target.dataset.del);
-    });
-
-    document.getElementById('btn-vaciar').onclick=()=>{carrito.clear();persist();pintarCarrito();}
-    document.getElementById('btn-finalizar').onclick=()=>alert("Pedido confirmado");
-
-    el.select.onchange=filtrar;
-
-    renderProductos(productos);
-    load();
-    pintarCarrito();
-  </script>
-
 </body>
 </html>
